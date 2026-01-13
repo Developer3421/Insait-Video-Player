@@ -111,6 +111,7 @@ public class LocalizationManager
         ["OpenFile"] = "Відкрити файл",
         ["OpenFolder"] = "Відкрити папку",
         ["NewTab"] = "Новий таб",
+        ["NewWindow"] = "Нове вікно",
         
         // Empty state
         ["OpenFileOrDragVideo"] = "Відкрийте файл або перетягніть відео сюди",
@@ -177,7 +178,21 @@ public class LocalizationManager
         // Session restore mock
         ["SessionRestoredTitle"] = "Сесію відновлено",
         ["PressPlayToStart"] = "Натисніть кнопку Play, щоб продовжити перегляд",
-        ["Or"] = "або"
+        ["Or"] = "або",
+        
+        // Overflow tabs window
+        ["OverflowWindowTitle"] = "Додаткові вкладки",
+        ["OverflowTabsHeader"] = "Вкладки в overflow",
+        ["NewTabButton"] = "Нова вкладка",
+        ["ActivateTab"] = "Активувати вкладку",
+        ["MoveToMain"] = "Перемістити в головне вікно",
+        ["CloseTabTooltip"] = "Закрити вкладку",
+        ["NoFile"] = "Немає файлу",
+        ["NoOverflowTabs"] = "Немає додаткових вкладок",
+        ["OverflowTabsCount"] = "{0} / {1} вкладок",
+        ["MaximumTabs"] = "Максимум: {0}",
+        ["OverflowTabs"] = "Додаткові вкладки",
+        ["TabLimitReached"] = "Досягнуто ліміт вкладок"
     };
     #endregion
     
@@ -195,6 +210,7 @@ public class LocalizationManager
         ["OpenFile"] = "Open file",
         ["OpenFolder"] = "Open folder",
         ["NewTab"] = "New tab",
+        ["NewWindow"] = "New window",
         
         // Empty state
         ["OpenFileOrDragVideo"] = "Open a file or drag video here",
@@ -261,7 +277,21 @@ public class LocalizationManager
         // Session restore mock
         ["SessionRestoredTitle"] = "Session restored",
         ["PressPlayToStart"] = "Press the Play button to continue watching",
-        ["Or"] = "or"
+        ["Or"] = "or",
+        
+        // Overflow tabs window
+        ["OverflowWindowTitle"] = "Additional tabs",
+        ["OverflowTabsHeader"] = "Overflow tabs",
+        ["NewTabButton"] = "New tab",
+        ["ActivateTab"] = "Activate tab",
+        ["MoveToMain"] = "Move to main window",
+        ["CloseTabTooltip"] = "Close tab",
+        ["NoFile"] = "No file",
+        ["NoOverflowTabs"] = "No additional tabs",
+        ["OverflowTabsCount"] = "{0} / {1} tabs",
+        ["MaximumTabs"] = "Maximum: {0}",
+        ["OverflowTabs"] = "Additional tabs",
+        ["TabLimitReached"] = "Tab limit reached"
     };
     #endregion
     
@@ -279,6 +309,7 @@ public class LocalizationManager
         ["OpenFile"] = "Datei öffnen",
         ["OpenFolder"] = "Ordner öffnen",
         ["NewTab"] = "Neuer Tab",
+        ["NewWindow"] = "Neues Fenster",
         
         // Empty state
         ["OpenFileOrDragVideo"] = "Öffnen Sie eine Datei oder ziehen Sie ein Video hierher",
@@ -345,7 +376,21 @@ public class LocalizationManager
         // Session restore mock
         ["SessionRestoredTitle"] = "Sitzung wiederhergestellt",
         ["PressPlayToStart"] = "Drücken Sie Play, um fortzufahren",
-        ["Or"] = "oder"
+        ["Or"] = "oder",
+        
+        // Overflow tabs window
+        ["OverflowWindowTitle"] = "Zusätzliche Tabs",
+        ["OverflowTabsHeader"] = "Overflow-Tabs",
+        ["NewTabButton"] = "Neuer Tab",
+        ["ActivateTab"] = "Tab aktivieren",
+        ["MoveToMain"] = "Zum Hauptfenster verschieben",
+        ["CloseTabTooltip"] = "Tab schließen",
+        ["NoFile"] = "Keine Datei",
+        ["NoOverflowTabs"] = "Keine zusätzlichen Tabs",
+        ["OverflowTabsCount"] = "{0} / {1} Tabs",
+        ["MaximumTabs"] = "Maximum: {0}",
+        ["OverflowTabs"] = "Zusätzliche Tabs",
+        ["TabLimitReached"] = "Tab-Limit erreicht"
     };
     #endregion
     
@@ -363,6 +408,7 @@ public class LocalizationManager
         ["OpenFile"] = "Открыть файл",
         ["OpenFolder"] = "Открыть папку",
         ["NewTab"] = "Новая вкладка",
+        ["NewWindow"] = "Новое окно",
         
         // Empty state
         ["OpenFileOrDragVideo"] = "Откройте файл или перетащите видео сюда",
@@ -429,7 +475,21 @@ public class LocalizationManager
         // Session restore mock
         ["SessionRestoredTitle"] = "Сессия восстановлена",
         ["PressPlayToStart"] = "Нажмите Play, чтобы продолжить просмотр",
-        ["Or"] = "или"
+        ["Or"] = "или",
+        
+        // Overflow tabs window
+        ["OverflowWindowTitle"] = "Дополнительные вкладки",
+        ["OverflowTabsHeader"] = "Вкладки overflow",
+        ["NewTabButton"] = "Новая вкладка",
+        ["ActivateTab"] = "Активировать вкладку",
+        ["MoveToMain"] = "Переместить в главное окно",
+        ["CloseTabTooltip"] = "Закрыть вкладку",
+        ["NoFile"] = "Нет файла",
+        ["NoOverflowTabs"] = "Нет дополнительных вкладок",
+        ["OverflowTabsCount"] = "{0} / {1} вкладок",
+        ["MaximumTabs"] = "Максимум: {0}",
+        ["OverflowTabs"] = "Дополнительные вкладки",
+        ["TabLimitReached"] = "Достигнут лимит вкладок"
     };
     #endregion
     
@@ -447,6 +507,7 @@ public class LocalizationManager
         ["OpenFile"] = "Dosya aç",
         ["OpenFolder"] = "Klasör aç",
         ["NewTab"] = "Yeni sekme",
+        ["NewWindow"] = "Yeni pencere",
         
         // Empty state
         ["OpenFileOrDragVideo"] = "Bir dosya açın veya videoyu buraya sürükleyin",
@@ -513,7 +574,21 @@ public class LocalizationManager
         // Session restore mock
         ["SessionRestoredTitle"] = "Oturum geri yüklendi",
         ["PressPlayToStart"] = "Devam etmek için Play düğmesine basın",
-        ["Or"] = "veya"
+        ["Or"] = "veya",
+        
+        // Overflow tabs window
+        ["OverflowWindowTitle"] = "Ek sekmeler",
+        ["OverflowTabsHeader"] = "Overflow sekmeleri",
+        ["NewTabButton"] = "Yeni sekme",
+        ["ActivateTab"] = "Sekmeyi etkinleştir",
+        ["MoveToMain"] = "Ana pencereye taşı",
+        ["CloseTabTooltip"] = "Sekmeyi kapat",
+        ["NoFile"] = "Dosya yok",
+        ["NoOverflowTabs"] = "Ek sekme yok",
+        ["OverflowTabsCount"] = "{0} / {1} sekme",
+        ["MaximumTabs"] = "Maksimum: {0}",
+        ["OverflowTabs"] = "Ek sekmeler",
+        ["TabLimitReached"] = "Sekme limitine ulaşıldı"
     };
     #endregion
 }
