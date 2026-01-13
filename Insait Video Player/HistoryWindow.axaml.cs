@@ -211,6 +211,24 @@ public partial class HistoryWindow : Window
         }
     }
     
+    private void OnPlayHistoryItem(object? sender, RoutedEventArgs e)
+    {
+        if (sender is Button button && button.Tag is HistoryDisplayItem item)
+        {
+            // Check if file exists
+            if (File.Exists(item.FilePath))
+            {
+                PlayFileRequested?.Invoke(this, item.FilePath);
+                Close();
+            }
+            else
+            {
+                // Show error or remove from history
+                System.Diagnostics.Debug.WriteLine($"File not found: {item.FilePath}");
+            }
+        }
+    }
+    
     private void OnHistoryItemDoubleTapped(object? sender, TappedEventArgs e)
     {
         // Find the clicked item

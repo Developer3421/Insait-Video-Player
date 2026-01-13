@@ -101,16 +101,20 @@
                                         BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" CornerRadius="8"
                                         Cursor="Hand">
                                     <Grid ColumnDefinitions="Auto,*,Auto,Auto">
-                                        <!-- Play icon -->
-                                        <Border Grid.Column="0" Width="40" Height="40" CornerRadius="8" 
-                                                Background="{DynamicResource AccentOrangeBrush}" Margin="0,0,12,0"
-                                                VerticalAlignment="Center">
+                                        <!-- Play button (clickable) -->
+                                        <Button Grid.Column="0" Width="40" Height="40" Padding="0"
+                                                Background="{DynamicResource AccentOrangeBrush}" 
+                                                BorderBrush="{DynamicResource AccentPurpleBrush}"
+                                                BorderThickness="2" CornerRadius="8" 
+                                                Margin="0,0,12,0" VerticalAlignment="Center"
+                                                Tag="{Binding}" Click="OnPlayHistoryItem"
+                                                ToolTip.Tip="Відтворити">
                                             <Viewbox Width="20" Height="20">
                                                 <Canvas Width="24" Height="24">
                                                     <Path Fill="{DynamicResource AccentPurpleBrush}" Data="M8,5V19L19,12Z"/>
                                                 </Canvas>
                                             </Viewbox>
-                                        </Border>
+                                        </Button>
                                         
                                         <!-- File info -->
                                         <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">

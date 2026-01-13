@@ -16,9 +16,7 @@ public class SavedTabState
     public int Id { get; set; }
     public string? FilePath { get; set; }
     public string Title { get; set; } = "Новий таб";
-    public float Position { get; set; }
-    public long Time { get; set; }
-    public bool WasPlaying { get; set; }
+    // Removed player state fields to prevent issues
     public int TabOrder { get; set; }
 }
 
@@ -349,9 +347,6 @@ public class SessionManager : IDisposable
                     Id = tab.Id,
                     FilePath = encryptedPath,
                     Title = tab.Title,
-                    Position = tab.SavedPosition > 0 ? tab.SavedPosition : tab.MediaPlayer?.Position ?? 0,
-                    Time = tab.SavedTime > 0 ? tab.SavedTime : tab.MediaPlayer?.Time ?? 0,
-                    WasPlaying = tab.WasPlaying || (tab.MediaPlayer?.IsPlaying ?? false),
                     TabOrder = i
                 });
 

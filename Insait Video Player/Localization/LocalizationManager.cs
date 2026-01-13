@@ -176,7 +176,8 @@ public class LocalizationManager
         
         // Session restore mock
         ["SessionRestoredTitle"] = "Сесію відновлено",
-        ["PressPlayToStart"] = "Натисніть кнопку «Відтворити», щоб продовжити перегляд"
+        ["PressPlayToStart"] = "Натисніть кнопку Play, щоб продовжити перегляд",
+        ["Or"] = "або"
     };
     #endregion
     
@@ -259,7 +260,8 @@ public class LocalizationManager
         
         // Session restore mock
         ["SessionRestoredTitle"] = "Session restored",
-        ["PressPlayToStart"] = "Press the Play button to continue watching"
+        ["PressPlayToStart"] = "Press the Play button to continue watching",
+        ["Or"] = "or"
     };
     #endregion
     
@@ -342,7 +344,8 @@ public class LocalizationManager
         
         // Session restore mock
         ["SessionRestoredTitle"] = "Sitzung wiederhergestellt",
-        ["PressPlayToStart"] = "Drücken Sie die Wiedergabe-Taste, um fortzufahren"
+        ["PressPlayToStart"] = "Drücken Sie Play, um fortzufahren",
+        ["Or"] = "oder"
     };
     #endregion
     
@@ -425,7 +428,8 @@ public class LocalizationManager
         
         // Session restore mock
         ["SessionRestoredTitle"] = "Сессия восстановлена",
-        ["PressPlayToStart"] = "Нажмите кнопку «Воспроизвести», чтобы продолжить просмотр"
+        ["PressPlayToStart"] = "Нажмите Play, чтобы продолжить просмотр",
+        ["Or"] = "или"
     };
     #endregion
     
@@ -508,7 +512,8 @@ public class LocalizationManager
         
         // Session restore mock
         ["SessionRestoredTitle"] = "Oturum geri yüklendi",
-        ["PressPlayToStart"] = "Devam etmek için Oynat düğmesine basın"
+        ["PressPlayToStart"] = "Devam etmek için Play düğmesine basın",
+        ["Or"] = "veya"
     };
     #endregion
 }

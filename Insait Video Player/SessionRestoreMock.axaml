@@ -1,0 +1,87 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Insait_Video_Player.SessionRestoreMock">
+    
+    <Border Background="#FF1E1E1E" CornerRadius="10">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="24">
+            
+            <!-- Play icon with restore indicator -->
+            <Border Width="140" Height="140" CornerRadius="70" Background="#308B5CF6" HorizontalAlignment="Center" Cursor="Hand" Name="PlayIconBorder">
+                <Panel>
+                    <!-- Large play icon -->
+                    <Viewbox Width="70" Height="70">
+                        <Canvas Width="24" Height="24">
+                            <Path Fill="#C0FFFFFF" Data="M8,5V19L19,12Z"/>
+                        </Canvas>
+                    </Viewbox>
+                    <!-- Small checkmark badge -->
+                    <Border Width="36" Height="36" CornerRadius="18" Background="#22C55E" 
+                            HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            Margin="0,0,8,8">
+                        <Viewbox Width="20" Height="20">
+                            <Canvas Width="24" Height="24">
+                                <Path Fill="White" Data="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                            </Canvas>
+                        </Viewbox>
+                    </Border>
+                </Panel>
+            </Border>
+            
+            <!-- Title -->
+            <TextBlock Name="TitleText"
+                       Text="Сесію відновлено" 
+                       FontSize="32" 
+                       FontWeight="Bold" 
+                       Foreground="#D0FFFFFF" 
+                       HorizontalAlignment="Center"/>
+            
+            <!-- File name box -->
+            <Border Background="#25FFFFFF" CornerRadius="8" Padding="20,12" HorizontalAlignment="Center" MaxWidth="500">
+                <StackPanel Spacing="6">
+                    <TextBlock Name="FileNameText"
+                               Text=""
+                               FontSize="15"
+                               FontWeight="SemiBold"
+                               Foreground="#B0FFFFFF"
+                               HorizontalAlignment="Center"
+                               TextTrimming="CharacterEllipsis"
+                               MaxWidth="460"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- Hint text -->
+            <TextBlock Name="HintText"
+                       Text="Натисніть кнопку Play, щоб продовжити перегляд" 
+                       FontSize="15" 
+                       Foreground="#80FFFFFF" 
+                       HorizontalAlignment="Center"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       MaxWidth="400"/>
+            
+            <!-- Play button hint -->
+            <StackPanel Orientation="Horizontal" Spacing="16" HorizontalAlignment="Center" Margin="0,16,0,0">
+                <Border Background="#25FFFFFF" CornerRadius="6" Padding="12,8">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Border Background="#308B5CF6" CornerRadius="4" Padding="6,4">
+                            <TextBlock Text="Space" Foreground="#D0FFFFFF" FontSize="12" FontFamily="Consolas" FontWeight="SemiBold"/>
+                        </Border>
+                        <TextBlock Name="OrText" Text="або" Foreground="#70FFFFFF" FontSize="12" VerticalAlignment="Center"/>
+                        <Border Background="#8B5CF6" CornerRadius="4" Padding="8,4">
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <Viewbox Width="12" Height="12" VerticalAlignment="Center">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Fill="White" Data="M8,5V19L19,12Z"/>
+                                    </Canvas>
+                                </Viewbox>
+                                <TextBlock Text="Play" Foreground="White" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            
+        </StackPanel>
+    </Border>
+</UserControl>
+
