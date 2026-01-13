@@ -1,0 +1,65 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Insait_Video_Player.UnsupportedFormatErrorControl">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+        
+        <!-- Error Icon and Title -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,16">
+            <Border Width="48" Height="48" CornerRadius="24" Background="#20FFA000" Margin="0,0,12,0">
+                <Viewbox Width="28" Height="28">
+                    <Canvas Width="24" Height="24">
+                        <Path Fill="#FFFF8C00" Data="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16Z"/>
+                    </Canvas>
+                </Viewbox>
+            </Border>
+            <TextBlock Text="Непідтримуваний формат" 
+                       FontSize="20" 
+                       FontWeight="Bold" 
+                       Foreground="{DynamicResource AccentPurpleBrush}"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Description -->
+        <TextBlock Grid.Row="1" 
+                   Text="Цей медіа файл використовує формат або кодек, який не підтримується плеєром."
+                   FontSize="14"
+                   Foreground="{DynamicResource AppTextMutedBrush}"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+                   Margin="0,0,0,12"/>
+
+        <!-- Format/Codec info -->
+        <Border Grid.Row="2" Background="#15000000" CornerRadius="8" Padding="12" Margin="0,0,0,16">
+            <StackPanel Spacing="8">
+                <TextBlock Text="Деталі формату:" 
+                           FontSize="12" 
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource AppTextBrush}"/>
+                <TextBlock Name="FormatDetailsText" 
+                           Text="Невідомий формат" 
+                           FontSize="11"
+                           Foreground="{DynamicResource AppTextMutedBrush}"
+                           TextWrapping="Wrap"
+                           FontFamily="Consolas"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Suggestions -->
+        <StackPanel Grid.Row="3" Spacing="6">
+            <TextBlock Text="Рекомендації:" 
+                       FontSize="12" 
+                       FontWeight="SemiBold"
+                       Foreground="{DynamicResource AppTextBrush}"/>
+            <StackPanel Spacing="4" Margin="8,0,0,0">
+                <TextBlock Text="• Конвертуйте файл у підтримуваний формат (MP4, MKV, AVI)" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+                <TextBlock Text="• Встановіть додаткові кодеки VLC" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+                <TextBlock Text="• Перевірте, чи файл не пошкоджено" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,67 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Insait_Video_Player.AudioOutputErrorControl">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+        
+        <!-- Error Icon and Title -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,16">
+            <Border Width="48" Height="48" CornerRadius="24" Background="#20A78BFA" Margin="0,0,12,0">
+                <Viewbox Width="28" Height="28">
+                    <Canvas Width="24" Height="24">
+                        <Path Fill="#7D2AE8" Data="M12,4L9.91,6.09C12.51,8.69 12.51,12.91 9.91,15.5L12,17.59C15.35,14.24 15.35,8.76 12,5.41L12,4M16.24,2.34L14.83,3.76C18.4,7.33 18.4,13.07 14.83,16.64L16.24,18.05C20.58,13.71 20.58,6.69 16.24,2.34M4.73,3.91L3.32,5.32C4.47,6.47 5.19,8.07 5.19,9.79V14.21C5.19,15.93 4.47,17.53 3.32,18.68L4.73,20.09C6.47,18.35 7.41,16.07 7.41,13.79V10.21C7.41,7.93 6.47,5.65 4.73,3.91M20.32,5.32L18.91,3.91C17.17,5.65 16.23,7.93 16.23,10.21V13.79C16.23,16.07 17.17,18.35 18.91,20.09L20.32,18.68C19.17,17.53 18.45,15.93 18.45,14.21V9.79C18.45,8.07 19.17,6.47 20.32,5.32Z"/>
+                    </Canvas>
+                </Viewbox>
+            </Border>
+            <TextBlock Text="Помилка аудіо виходу" 
+                       FontSize="20" 
+                       FontWeight="Bold" 
+                       Foreground="{DynamicResource AccentPurpleBrush}"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Description -->
+        <TextBlock Grid.Row="1" 
+                   Text="Не вдалося відтворити звук. Перевірте налаштування аудіо пристрою."
+                   FontSize="14"
+                   Foreground="{DynamicResource AppTextMutedBrush}"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+                   Margin="0,0,0,12"/>
+
+        <!-- Device info -->
+        <Border Grid.Row="2" Background="#15000000" CornerRadius="8" Padding="12" Margin="0,0,0,16">
+            <StackPanel Spacing="8">
+                <TextBlock Text="Інформація про пристрій:" 
+                           FontSize="12" 
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource AppTextBrush}"/>
+                <TextBlock Name="DeviceInfoText" 
+                           Text="Аудіо пристрій за замовчуванням" 
+                           FontSize="11"
+                           Foreground="{DynamicResource AppTextMutedBrush}"
+                           TextWrapping="Wrap"
+                           FontFamily="Consolas"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Suggestions -->
+        <StackPanel Grid.Row="3" Spacing="6">
+            <TextBlock Text="Рекомендації:" 
+                       FontSize="12" 
+                       FontWeight="SemiBold"
+                       Foreground="{DynamicResource AppTextBrush}"/>
+            <StackPanel Spacing="4" Margin="8,0,0,0">
+                <TextBlock Text="• Перевірте, чи підключено аудіо пристрій" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+                <TextBlock Text="• Перевірте налаштування звуку Windows" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+                <TextBlock Text="• Оберіть інший аудіо пристрій у системі" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+                <TextBlock Text="• Перезапустіть програму" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

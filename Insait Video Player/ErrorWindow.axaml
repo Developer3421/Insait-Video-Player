@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Insait_Video_Player.ErrorWindow"
+        Title="Помилка"
+        WindowStartupLocation="CenterOwner"
+        SystemDecorations="None"
+        Background="{DynamicResource AppBgBrush}"
+        Width="500"
+        Height="300"
+        CanResize="False"
+        UseLayoutRounding="True"
+        FontFamily="Segoe UI, Arial, Tahoma">
+
+    <Grid RowDefinitions="42,*">
+
+        <!-- ROW 0: TITLE BAR -->
+        <Grid Grid.Row="0" Name="TitleBar" Background="{DynamicResource GrayGradient}">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+
+                <!-- Left: Error icon + title -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="12,0,0,0">
+                    <Border Width="28" Height="28" CornerRadius="4" Background="#40FF5C5C" Margin="0,0,10,0">
+                        <Viewbox Width="18" Height="18">
+                            <Canvas Width="24" Height="24">
+                                <Path Fill="#FFD84315" Data="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M11,7H13V13H11V7M11,15H13V17H11V15Z"/>
+                            </Canvas>
+                        </Viewbox>
+                    </Border>
+                    <TextBlock Name="TitleText" Text="Помилка"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource AppTextBrush}"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Middle: Draggable area -->
+                <Panel Name="TitleBarDragArea" Grid.Column="1" Background="Transparent"/>
+
+                <!-- Right: Close button -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Name="CloseButton" Classes="window-control close" Padding="0">
+                        <Image Source="avares://Insait Video Player/Sources/CloseButton.png" Stretch="UniformToFill"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <!-- ROW 1: Content area for error details -->
+        <Border Grid.Row="1" Classes="panel" Margin="8" Padding="20">
+            <ContentControl Name="ErrorContent"/>
+        </Border>
+
+    </Grid>
+</Window>
+

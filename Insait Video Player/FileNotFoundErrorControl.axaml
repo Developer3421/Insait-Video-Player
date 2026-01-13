@@ -1,0 +1,65 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Insait_Video_Player.FileNotFoundErrorControl">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+        
+        <!-- Error Icon and Title -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,16">
+            <Border Width="48" Height="48" CornerRadius="24" Background="#20FF5C5C" Margin="0,0,12,0">
+                <Viewbox Width="28" Height="28">
+                    <Canvas Width="24" Height="24">
+                        <Path Fill="#FFD84315" Data="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M13,9V3.5L18.5,9H13M12,12C14.21,12 16,13.79 16,16C16,18.21 14.21,20 12,20C9.79,20 8,18.21 8,16C8,13.79 9.79,12 12,12M12,14C10.9,14 10,14.9 10,16C10,17.1 10.9,18 12,18C13.1,18 14,17.1 14,16C14,14.9 13.1,14 12,14Z"/>
+                    </Canvas>
+                </Viewbox>
+            </Border>
+            <TextBlock Text="Файл не знайдено" 
+                       FontSize="20" 
+                       FontWeight="Bold" 
+                       Foreground="{DynamicResource AccentPurpleBrush}"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Description -->
+        <TextBlock Grid.Row="1" 
+                   Text="Файл, який ви намагаєтесь відтворити, не існує або до нього заборонено доступ."
+                   FontSize="14"
+                   Foreground="{DynamicResource AppTextMutedBrush}"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+                   Margin="0,0,0,12"/>
+
+        <!-- File path (if available) -->
+        <Border Grid.Row="2" Background="#15000000" CornerRadius="8" Padding="12" Margin="0,0,0,16">
+            <StackPanel Spacing="8">
+                <TextBlock Text="Шлях до файлу:" 
+                           FontSize="12" 
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource AppTextBrush}"/>
+                <TextBlock Name="FilePathText" 
+                           Text="Не вказано" 
+                           FontSize="11"
+                           Foreground="{DynamicResource AppTextMutedBrush}"
+                           TextWrapping="Wrap"
+                           FontFamily="Consolas"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Suggestions -->
+        <StackPanel Grid.Row="3" Spacing="6">
+            <TextBlock Text="Можливі причини:" 
+                       FontSize="12" 
+                       FontWeight="SemiBold"
+                       Foreground="{DynamicResource AppTextBrush}"/>
+            <StackPanel Spacing="4" Margin="8,0,0,0">
+                <TextBlock Text="• Файл було видалено або переміщено" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+                <TextBlock Text="• Немає прав доступу до файлу" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+                <TextBlock Text="• Зйомний носій відключено" 
+                           FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
