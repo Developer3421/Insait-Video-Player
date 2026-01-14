@@ -17,6 +17,11 @@ public class OverflowTabDisplayItem
     public string Title { get; set; } = string.Empty;
     public string? FilePath { get; set; }
     public TabInstance? TabInstance { get; set; }
+    
+    // Localized tooltip strings for AXAML binding
+    public string ActivateTooltip { get; set; } = string.Empty;
+    public string MoveToMainTooltip { get; set; } = string.Empty;
+    public string CloseTabTooltip { get; set; } = string.Empty;
 }
 
 public partial class OverflowTabsWindow : Window
@@ -103,7 +108,40 @@ public partial class OverflowTabsWindow : Window
         EmptyStateText.Text = loc["NoOverflowTabs"];
         MaximumText.Text = string.Format(loc["MaximumTabs"], MaxOverflowTabs);
         
+        // Add tab button tooltip
+        ToolTip.SetTip(AddTabButton, loc["NewTab"]);
+        
+        // Update tooltip properties in all existing items
+        foreach (var item in _overflowTabs)
+        {
+            item.ActivateTooltip = loc["ActivateTab"];
+            item.MoveToMainTooltip = loc["MoveToMain"];
+            item.CloseTabTooltip = loc["CloseTabTooltip"];
+            if (item.TabInstance != null)
+            {
+                item.FilePath = item.TabInstance.FilePath ?? loc["NoFile"];
+            }
+        }
+        
+        // Force refresh of items to update bindings
+        RefreshTabsList();
+        
         UpdateUI();
+    }
+    
+    /// <summary>
+    /// Refreshes the tabs list to update bindings after language change
+    /// </summary>
+    private void RefreshTabsList()
+    {
+        if (_overflowTabs.Count == 0) return;
+        
+        var items = _overflowTabs.ToList();
+        _overflowTabs.Clear();
+        foreach (var item in items)
+        {
+            _overflowTabs.Add(item);
+        }
     }
     
     private void OnTitleBarPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -125,7 +163,10 @@ public partial class OverflowTabsWindow : Window
             TabId = tab.Id,
             Title = tab.Title,
             FilePath = tab.FilePath ?? loc["NoFile"],
-            TabInstance = tab
+            TabInstance = tab,
+            ActivateTooltip = loc["ActivateTab"],
+            MoveToMainTooltip = loc["MoveToMain"],
+            CloseTabTooltip = loc["CloseTabTooltip"]
         });
         
         UpdateUI();
