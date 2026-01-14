@@ -68,7 +68,7 @@ Insait Video Player/
 - **Session Persistence**: Auto-saves sessions with encrypted storage
 - **Error Handling**: User-friendly messages 
 
-# #Download
+## Download
 Microsoft Store: (in work)
 
 ## Known Issues
