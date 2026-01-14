@@ -66,16 +66,10 @@ Insait Video Player/
 
 - **Tab Management**: Unlimited tabs with drag-to-reorder and overflow menu
 - **Session Persistence**: Auto-saves sessions with encrypted storage
-- **Error Handling**: User-friendly messages with automatic recovery
-- **Playback History**: Tracks up to 100 recent videos with position memory
+- **Error Handling**: User-friendly messages 
 
-
-
-## Contributing
-
-Contributions are welcome! Please open an issue first to discuss major changes.
-
-**Development Requirements**: Visual Studio 2022/JetBrains Rider, .NET 10.0 SDK
+# #Download
+Microsoft Store: (in work)
 
 ## Known Issues
 
@@ -85,10 +79,4 @@ Contributions are welcome! Please open an issue first to discuss major changes.
 
 ## License
 This project is licensed under the MIT License.
-## Support
 
-For bug reports and feature requests, please open an issue on GitHub.
-
----
-
-**Note**: This is a Windows-only application. Cross-platform support may be added in future versions.
