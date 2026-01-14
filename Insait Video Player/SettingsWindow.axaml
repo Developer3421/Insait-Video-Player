@@ -135,12 +135,12 @@
                                 
                                 <Border Height="1" Background="{DynamicResource AppBorderBrush}" Margin="0,10"/>
                                 
-                                <TextBlock Text="Сучасний відео плеєр з підтримкою багатьох форматів" 
+                                <TextBlock Name="AboutDescriptionText" Text="Сучасний відео плеєр з підтримкою багатьох форматів" 
                                            FontSize="13" Foreground="{DynamicResource AppTextMutedBrush}" TextWrapping="Wrap"/>
                                 
                                 <StackPanel Spacing="4" Margin="0,8,0,0">
-                                    <TextBlock Text="© 2026 Insait" FontSize="12" Foreground="{DynamicResource AppTextMutedBrush}"/>
-                                    <TextBlock Text="LibVLC powered video playback" FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}" Opacity="0.7"/>
+                                    <TextBlock Name="CopyrightText" Text="© 2026 Insait" FontSize="12" Foreground="{DynamicResource AppTextMutedBrush}"/>
+                                    <TextBlock Name="PoweredByText" Text="LibVLC powered video playback" FontSize="11" Foreground="{DynamicResource AppTextMutedBrush}" Opacity="0.7"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>

@@ -1,0 +1,173 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Insait_Video_Player.UserAgreementWindow"
+        Title="Угода користувача"
+        WindowStartupLocation="CenterOwner"
+        SystemDecorations="None"
+        Background="{DynamicResource AppBgBrush}"
+        Width="650"
+        Height="550"
+        CanResize="False"
+        UseLayoutRounding="True"
+        FontFamily="Segoe UI, Arial, Tahoma">
+
+    <Grid RowDefinitions="42,*,Auto">
+
+        <!-- ROW 0: TITLE BAR -->
+        <Grid Grid.Row="0" Name="TitleBar" Background="{DynamicResource GrayGradient}">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+
+                <!-- Left: Shield icon + title -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="12,0,0,0">
+                    <Border Width="28" Height="28" CornerRadius="4" Background="{DynamicResource AccentOrangeBrush}" Margin="0,0,10,0">
+                        <Viewbox Width="18" Height="18">
+                            <Canvas Width="24" Height="24">
+                                <Path Fill="{DynamicResource AccentPurpleBrush}" Data="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.2V15.7C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.7V12.2C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
+                            </Canvas>
+                        </Viewbox>
+                    </Border>
+                    <TextBlock Name="TitleText" Text="Угода користувача"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource AppTextBrush}"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Middle: Draggable area -->
+                <Panel Name="TitleBarDragArea" Grid.Column="1" Background="Transparent"/>
+
+                <!-- Right: Close button -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Name="CloseButton" Classes="window-control close" Padding="0">
+                        <Image Source="avares://Insait Video Player/Sources/CloseButton.png" Stretch="UniformToFill"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <!-- ROW 1: Content area -->
+        <Border Grid.Row="1" Classes="panel" Margin="8,8,8,0" Padding="20">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <StackPanel Spacing="16">
+                    <!-- Main title -->
+                    <TextBlock Name="AgreementTitle" 
+                               Text="Угода користувача Insait Video Player" 
+                               FontSize="20" 
+                               FontWeight="Bold" 
+                               Foreground="{DynamicResource AppTextBrush}"
+                               TextWrapping="Wrap"/>
+                    
+                    <!-- Last updated -->
+                    <TextBlock Name="LastUpdatedText"
+                               Text="Останнє оновлення: 14 січня 2026"
+                               FontSize="11"
+                               Foreground="{DynamicResource AppTextMutedBrush}"/>
+                    
+                    <Border Height="1" Background="{DynamicResource AccentPurpleBrush}" Opacity="0.3" Margin="0,8"/>
+                    
+                    <!-- Section 1: AS IS -->
+                    <StackPanel Spacing="8">
+                        <TextBlock Name="Section1Title" 
+                                   Text="1. Відмова від гарантій" 
+                                   FontSize="14" 
+                                   FontWeight="SemiBold" 
+                                   Foreground="{DynamicResource AccentOrangeBrush}"/>
+                        <TextBlock Name="Section1Text" 
+                                   TextWrapping="Wrap"
+                                   FontSize="13"
+                                   LineHeight="22"
+                                   Foreground="{DynamicResource AppTextBrush}"
+                                   Text="Цей додаток надається «як є» (as is), без будь-яких гарантій, явних чи неявних. Розробник не несе відповідальності за будь-які прямі, непрямі, випадкові або особливі збитки, що виникають внаслідок використання або неможливості використання цього додатка."/>
+                    </StackPanel>
+                    
+                    <!-- Section 2: Privacy -->
+                    <StackPanel Spacing="8">
+                        <TextBlock Name="Section2Title" 
+                                   Text="2. Конфіденційність та збір даних" 
+                                   FontSize="14" 
+                                   FontWeight="SemiBold" 
+                                   Foreground="{DynamicResource AccentOrangeBrush}"/>
+                        <TextBlock Name="Section2Text" 
+                                   TextWrapping="Wrap"
+                                   FontSize="13"
+                                   LineHeight="22"
+                                   Foreground="{DynamicResource AppTextBrush}"
+                                   Text="Ми цінуємо вашу конфіденційність. Цей додаток НЕ збирає, НЕ передає та НЕ зберігає жодних персональних даних на зовнішніх серверах. Уся інформація (історія перегляду, налаштування, позиції відтворення) зберігається виключно локально на вашому пристрої."/>
+                    </StackPanel>
+                    
+                    <!-- Section 3: Local Storage -->
+                    <StackPanel Spacing="8">
+                        <TextBlock Name="Section3Title" 
+                                   Text="3. Локальне зберігання даних" 
+                                   FontSize="14" 
+                                   FontWeight="SemiBold" 
+                                   Foreground="{DynamicResource AccentOrangeBrush}"/>
+                        <TextBlock Name="Section3Text" 
+                                   TextWrapping="Wrap"
+                                   FontSize="13"
+                                   LineHeight="22"
+                                   Foreground="{DynamicResource AppTextBrush}"
+                                   Text="Додаток може зберігати на вашому комп'ютері такі дані:&#x0a;• Історію переглянутих файлів&#x0a;• Позиції відтворення для відновлення сесії&#x0a;• Налаштування інтерфейсу (мова, гучність тощо)&#x0a;&#x0a;Ви можете в будь-який момент видалити ці дані через налаштування програми або вручну."/>
+                    </StackPanel>
+                    
+                    <!-- Section 4: Intellectual Property -->
+                    <StackPanel Spacing="8">
+                        <TextBlock Name="Section4Title" 
+                                   Text="4. Інтелектуальна власність" 
+                                   FontSize="14" 
+                                   FontWeight="SemiBold" 
+                                   Foreground="{DynamicResource AccentOrangeBrush}"/>
+                        <TextBlock Name="Section4Text" 
+                                   TextWrapping="Wrap"
+                                   FontSize="13"
+                                   LineHeight="22"
+                                   Foreground="{DynamicResource AppTextBrush}"
+                                   Text="Insait Video Player використовує бібліотеку LibVLC для відтворення медіа. LibVLC є вільним програмним забезпеченням, що розповсюджується під ліцензією LGPL."/>
+                    </StackPanel>
+                    
+                    <!-- Section 5: Agreement -->
+                    <StackPanel Spacing="8">
+                        <TextBlock Name="Section5Title" 
+                                   Text="5. Прийняття умов" 
+                                   FontSize="14" 
+                                   FontWeight="SemiBold" 
+                                   Foreground="{DynamicResource AccentOrangeBrush}"/>
+                        <TextBlock Name="Section5Text" 
+                                   TextWrapping="Wrap"
+                                   FontSize="13"
+                                   LineHeight="22"
+                                   Foreground="{DynamicResource AppTextBrush}"
+                                   Text="Використовуючи цей додаток, ви погоджуєтесь з умовами цієї угоди. Якщо ви не згодні з будь-якими умовами, будь ласка, припиніть використання додатка."/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <!-- ROW 2: Footer with close button -->
+        <Border Grid.Row="2" Margin="8" Padding="16,12">
+            <Grid ColumnDefinitions="*,Auto">
+                <TextBlock Name="CopyrightText" 
+                           Grid.Column="0"
+                           Text="© 2026 Insait. Всі права захищено."
+                           FontSize="11"
+                           Foreground="{DynamicResource AppTextMutedBrush}"
+                           VerticalAlignment="Center"/>
+                <Button Name="AcceptButton" 
+                        Grid.Column="1"
+                        Content="Зрозуміло"
+                        Width="120"
+                        Height="36"
+                        Background="{DynamicResource AccentOrangeBrush}"
+                        Foreground="{DynamicResource AccentPurpleBrush}"
+                        BorderBrush="{DynamicResource AccentPurpleBrush}"
+                        BorderThickness="2"
+                        CornerRadius="8"
+                        FontWeight="SemiBold"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Cursor="Hand"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+

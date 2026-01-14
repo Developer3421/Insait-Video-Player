@@ -98,26 +98,10 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate x:DataType="local:HistoryDisplayItem">
                                 <Border Margin="4" Padding="12" Background="{DynamicResource AppSurfaceBrush}" 
-                                        BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" CornerRadius="8"
-                                        Cursor="Hand">
-                                    <Grid ColumnDefinitions="Auto,*,Auto,Auto">
-                                        <!-- Play button (clickable) -->
-                                        <Button Grid.Column="0" Width="40" Height="40" Padding="0"
-                                                Background="{DynamicResource AccentOrangeBrush}" 
-                                                BorderBrush="{DynamicResource AccentPurpleBrush}"
-                                                BorderThickness="2" CornerRadius="8" 
-                                                Margin="0,0,12,0" VerticalAlignment="Center"
-                                                Tag="{Binding}" Click="OnPlayHistoryItem"
-                                                ToolTip.Tip="Відтворити">
-                                            <Viewbox Width="20" Height="20">
-                                                <Canvas Width="24" Height="24">
-                                                    <Path Fill="{DynamicResource AccentPurpleBrush}" Data="M8,5V19L19,12Z"/>
-                                                </Canvas>
-                                            </Viewbox>
-                                        </Button>
-                                        
+                                        BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" CornerRadius="8">
+                                    <Grid ColumnDefinitions="*,Auto,Auto">
                                         <!-- File info -->
-                                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+                                        <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="2">
                                             <TextBlock Text="{Binding FileName}" FontWeight="SemiBold" FontSize="13"
                                                        Foreground="{DynamicResource AppTextBrush}"
                                                        TextTrimming="CharacterEllipsis"/>
@@ -127,7 +111,7 @@
                                         </StackPanel>
                                         
                                         <!-- Date/Time -->
-                                        <StackPanel Grid.Column="2" VerticalAlignment="Center" Margin="12,0" Spacing="2">
+                                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="12,0" Spacing="2">
                                             <TextBlock Text="{Binding DateText}" FontSize="11" 
                                                        Foreground="{DynamicResource AppTextMutedBrush}"
                                                        HorizontalAlignment="Right"/>
@@ -137,7 +121,7 @@
                                         </StackPanel>
                                         
                                         <!-- Delete button -->
-                                        <Button Grid.Column="3" Classes="tab-close" Width="28" Height="28" 
+                                        <Button Grid.Column="2" Classes="tab-close" Width="28" Height="28" 
                                                 Tag="{Binding}" ToolTip.Tip="Видалити з історії"
                                                 Click="OnDeleteHistoryItem">
                                             <PathIcon Data="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" 

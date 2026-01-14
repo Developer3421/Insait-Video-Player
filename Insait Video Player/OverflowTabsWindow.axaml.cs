@@ -14,7 +14,7 @@ namespace Insait_Video_Player;
 public class OverflowTabDisplayItem
 {
     public int TabId { get; set; }
-    public string Title { get; set; } = "Нова вкладка";
+    public string Title { get; set; } = string.Empty;
     public string? FilePath { get; set; }
     public TabInstance? TabInstance { get; set; }
 }

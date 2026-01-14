@@ -119,6 +119,9 @@ public partial class SettingsWindow : Window
         // About panel
         AboutTitle.Text = loc["About"];
         VersionText.Text = $"{loc["Version"]} 1.0.0";
+        AboutDescriptionText.Text = loc["AboutDescription"];
+        CopyrightText.Text = loc["Copyright"];
+        PoweredByText.Text = loc["PoweredBy"];
     }
     
     private void ShowSection(string section)

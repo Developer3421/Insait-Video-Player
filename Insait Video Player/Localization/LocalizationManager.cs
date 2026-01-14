@@ -27,7 +27,7 @@ public class LocalizationManager
     public static LocalizationManager Instance => _instance ??= new LocalizationManager();
     
     private Dictionary<string, string> _currentStrings = new();
-    private Language _currentLanguage = Language.Ukrainian;
+    private Language _currentLanguage = Language.English;
     
     public event EventHandler? LanguageChanged;
     
@@ -40,7 +40,7 @@ public class LocalizationManager
         Language.German => "de-DE",
         Language.Russian => "ru-RU",
         Language.Turkish => "tr-TR",
-        _ => "uk-UA"
+        _ => "en-US"
     };
     
     public static string GetLanguageDisplayName(Language language) => language switch
@@ -50,7 +50,7 @@ public class LocalizationManager
         Language.German => "Deutsch",
         Language.Russian => "Русский",
         Language.Turkish => "Türkçe",
-        _ => "Українська"
+        _ => "English"
     };
     
     public static Language GetLanguageFromCode(string code) => code switch
@@ -60,7 +60,7 @@ public class LocalizationManager
         "de-DE" or "de" => Language.German,
         "ru-RU" or "ru" => Language.Russian,
         "tr-TR" or "tr" => Language.Turkish,
-        _ => Language.Ukrainian
+        _ => Language.English
     };
     
     public LocalizationManager()
@@ -162,6 +162,11 @@ public class LocalizationManager
         ["SelectLanguage"] = "Виберіть мову інтерфейсу",
         ["RestartRequired"] = "Для застосування деяких змін може знадобитися перезапуск програми",
         
+        // About page
+        ["AboutDescription"] = "Сучасний відео плеєр з підтримкою багатьох форматів",
+        ["Copyright"] = "© 2026 Insait",
+        ["PoweredBy"] = "Відтворення відео на базі LibVLC",
+        
         // Tab
         ["NewTabTitle"] = "Новий таб",
         ["CloseTab"] = "Закрити таб",
@@ -261,9 +266,32 @@ public class LocalizationManager
         ["SelectLanguage"] = "Select interface language",
         ["RestartRequired"] = "A restart may be required for some changes to take effect",
         
+        // About page
+        ["AboutDescription"] = "Modern video player with support for many formats",
+        ["Copyright"] = "© 2026 Insait",
+        ["PoweredBy"] = "Video playback powered by LibVLC",
+        
         // Tab
         ["NewTabTitle"] = "New tab",
         ["CloseTab"] = "Close tab",
+        
+        // User Agreement
+        ["UserAgreement"] = "User Agreement",
+        ["UserAgreementWindowTitle"] = "User Agreement",
+        ["UserAgreementTitle"] = "Insait Video Player User Agreement",
+        ["UserAgreementLastUpdated"] = "Last updated: January 14, 2026",
+        ["UserAgreementSection1Title"] = "1. Disclaimer of Warranties",
+        ["UserAgreementSection1Text"] = "This application is provided \"as is\", without any warranties, express or implied. The developer is not liable for any direct, indirect, incidental, or special damages arising from the use or inability to use this application.",
+        ["UserAgreementSection2Title"] = "2. Privacy and Data Collection",
+        ["UserAgreementSection2Text"] = "We value your privacy. This application does NOT collect, transmit, or store any personal data on external servers. All information (watch history, settings, playback positions) is stored exclusively locally on your device.",
+        ["UserAgreementSection3Title"] = "3. Local Data Storage",
+        ["UserAgreementSection3Text"] = "The application may store the following data on your computer:\n• Watch history\n• Playback positions for session restoration\n• Interface settings (language, volume, etc.)\n\nYou can delete this data at any time through the application settings or manually.",
+        ["UserAgreementSection4Title"] = "4. Intellectual Property",
+        ["UserAgreementSection4Text"] = "Insait Video Player uses the LibVLC library for media playback. LibVLC is free software distributed under the LGPL license.",
+        ["UserAgreementSection5Title"] = "5. Acceptance of Terms",
+        ["UserAgreementSection5Text"] = "By using this application, you agree to the terms of this agreement. If you do not agree with any terms, please stop using the application.",
+        ["UserAgreementCopyright"] = "© 2026 Insait. All rights reserved.",
+        ["UserAgreementAcceptButton"] = "Understood",
         
         // History
         ["HistoryWindowTitle"] = "Watch History",
@@ -360,9 +388,32 @@ public class LocalizationManager
         ["SelectLanguage"] = "Wählen Sie die Sprache der Benutzeroberfläche",
         ["RestartRequired"] = "Für einige Änderungen ist möglicherweise ein Neustart erforderlich",
         
+        // About page
+        ["AboutDescription"] = "Moderner Videoplayer mit Unterstützung für viele Formate",
+        ["Copyright"] = "© 2026 Insait",
+        ["PoweredBy"] = "Videowiedergabe powered by LibVLC",
+        
         // Tab
         ["NewTabTitle"] = "Neuer Tab",
         ["CloseTab"] = "Tab schließen",
+        
+        // User Agreement
+        ["UserAgreement"] = "Nutzungsvereinbarung",
+        ["UserAgreementWindowTitle"] = "Nutzungsvereinbarung",
+        ["UserAgreementTitle"] = "Insait Video Player Nutzungsvereinbarung",
+        ["UserAgreementLastUpdated"] = "Letzte Aktualisierung: 14. Januar 2026",
+        ["UserAgreementSection1Title"] = "1. Haftungsausschluss",
+        ["UserAgreementSection1Text"] = "Diese Anwendung wird \"wie besehen\" bereitgestellt, ohne jegliche Garantien, weder ausdrücklich noch stillschweigend. Der Entwickler haftet nicht für direkte, indirekte, zufällige oder besondere Schäden, die aus der Nutzung oder der Unmöglichkeit der Nutzung dieser Anwendung entstehen.",
+        ["UserAgreementSection2Title"] = "2. Datenschutz und Datenerfassung",
+        ["UserAgreementSection2Text"] = "Wir schätzen Ihre Privatsphäre. Diese Anwendung sammelt, überträgt oder speichert KEINE persönlichen Daten auf externen Servern. Alle Informationen (Wiedergabeverlauf, Einstellungen, Wiedergabepositionen) werden ausschließlich lokal auf Ihrem Gerät gespeichert.",
+        ["UserAgreementSection3Title"] = "3. Lokale Datenspeicherung",
+        ["UserAgreementSection3Text"] = "Die Anwendung kann folgende Daten auf Ihrem Computer speichern:\n• Wiedergabeverlauf\n• Wiedergabepositionen für die Sitzungswiederherstellung\n• Oberflächeneinstellungen (Sprache, Lautstärke usw.)\n\nSie können diese Daten jederzeit über die Anwendungseinstellungen oder manuell löschen.",
+        ["UserAgreementSection4Title"] = "4. Geistiges Eigentum",
+        ["UserAgreementSection4Text"] = "Insait Video Player verwendet die LibVLC-Bibliothek für die Medienwiedergabe. LibVLC ist freie Software, die unter der LGPL-Lizenz vertrieben wird.",
+        ["UserAgreementSection5Title"] = "5. Annahme der Bedingungen",
+        ["UserAgreementSection5Text"] = "Durch die Nutzung dieser Anwendung stimmen Sie den Bedingungen dieser Vereinbarung zu. Wenn Sie mit irgendwelchen Bedingungen nicht einverstanden sind, beenden Sie bitte die Nutzung der Anwendung.",
+        ["UserAgreementCopyright"] = "© 2026 Insait. Alle Rechte vorbehalten.",
+        ["UserAgreementAcceptButton"] = "Verstanden",
         
         // History
         ["HistoryWindowTitle"] = "Wiedergabeverlauf",
@@ -459,9 +510,32 @@ public class LocalizationManager
         ["SelectLanguage"] = "Выберите язык интерфейса",
         ["RestartRequired"] = "Для применения некоторых изменений может потребоваться перезапуск программы",
         
+        // About page
+        ["AboutDescription"] = "Современный видеоплеер с поддержкой множества форматов",
+        ["Copyright"] = "© 2026 Insait",
+        ["PoweredBy"] = "Воспроизведение видео на базе LibVLC",
+        
         // Tab
         ["NewTabTitle"] = "Новая вкладка",
         ["CloseTab"] = "Закрыть вкладку",
+        
+        // User Agreement
+        ["UserAgreement"] = "Пользовательское соглашение",
+        ["UserAgreementWindowTitle"] = "Пользовательское соглашение",
+        ["UserAgreementTitle"] = "Пользовательское соглашение Insait Video Player",
+        ["UserAgreementLastUpdated"] = "Последнее обновление: 14 января 2026",
+        ["UserAgreementSection1Title"] = "1. Отказ от гарантий",
+        ["UserAgreementSection1Text"] = "Это приложение предоставляется «как есть» (as is), без каких-либо гарантий, явных или подразумеваемых. Разработчик не несёт ответственности за любые прямые, косвенные, случайные или особые убытки, возникающие в результате использования или невозможности использования этого приложения.",
+        ["UserAgreementSection2Title"] = "2. Конфиденциальность и сбор данных",
+        ["UserAgreementSection2Text"] = "Мы ценим вашу конфиденциальность. Это приложение НЕ собирает, НЕ передаёт и НЕ хранит никаких персональных данных на внешних серверах. Вся информация (история просмотра, настройки, позиции воспроизведения) хранится исключительно локально на вашем устройстве.",
+        ["UserAgreementSection3Title"] = "3. Локальное хранение данных",
+        ["UserAgreementSection3Text"] = "Приложение может хранить на вашем компьютере следующие данные:\n• История просмотренных файлов\n• Позиции воспроизведения для восстановления сессии\n• Настройки интерфейса (язык, громкость и т.д.)\n\nВы можете в любой момент удалить эти данные через настройки программы или вручную.",
+        ["UserAgreementSection4Title"] = "4. Интеллектуальная собственность",
+        ["UserAgreementSection4Text"] = "Insait Video Player использует библиотеку LibVLC для воспроизведения медиа. LibVLC является свободным программным обеспечением, распространяемым под лицензией LGPL.",
+        ["UserAgreementSection5Title"] = "5. Принятие условий",
+        ["UserAgreementSection5Text"] = "Используя это приложение, вы соглашаетесь с условиями этого соглашения. Если вы не согласны с какими-либо условиями, пожалуйста, прекратите использование приложения.",
+        ["UserAgreementCopyright"] = "© 2026 Insait. Все права защищены.",
+        ["UserAgreementAcceptButton"] = "Понятно",
         
         // History
         ["HistoryWindowTitle"] = "История просмотра",
@@ -558,9 +632,32 @@ public class LocalizationManager
         ["SelectLanguage"] = "Arayüz dilini seçin",
         ["RestartRequired"] = "Bazı değişikliklerin uygulanması için yeniden başlatma gerekebilir",
         
+        // About page
+        ["AboutDescription"] = "Birçok formatı destekleyen modern video oynatıcı",
+        ["Copyright"] = "© 2026 Insait",
+        ["PoweredBy"] = "LibVLC ile video oynatma",
+        
         // Tab
         ["NewTabTitle"] = "Yeni sekme",
         ["CloseTab"] = "Sekmeyi kapat",
+        
+        // User Agreement
+        ["UserAgreement"] = "Kullanıcı Sözleşmesi",
+        ["UserAgreementWindowTitle"] = "Kullanıcı Sözleşmesi",
+        ["UserAgreementTitle"] = "Insait Video Player Kullanıcı Sözleşmesi",
+        ["UserAgreementLastUpdated"] = "Son güncelleme: 14 Ocak 2026",
+        ["UserAgreementSection1Title"] = "1. Garanti Reddi",
+        ["UserAgreementSection1Text"] = "Bu uygulama, açık veya zımni hiçbir garanti olmaksızın \"olduğu gibi\" sağlanmaktadır. Geliştirici, bu uygulamanın kullanımından veya kullanılamamasından kaynaklanan doğrudan, dolaylı, tesadüfi veya özel zararlardan sorumlu değildir.",
+        ["UserAgreementSection2Title"] = "2. Gizlilik ve Veri Toplama",
+        ["UserAgreementSection2Text"] = "Gizliliğinize değer veriyoruz. Bu uygulama harici sunucularda hiçbir kişisel veri toplamaz, iletmez veya saklamaz. Tüm bilgiler (izleme geçmişi, ayarlar, oynatma konumları) yalnızca cihazınızda yerel olarak saklanır.",
+        ["UserAgreementSection3Title"] = "3. Yerel Veri Depolama",
+        ["UserAgreementSection3Text"] = "Uygulama bilgisayarınızda aşağıdaki verileri saklayabilir:\n• İzleme geçmişi\n• Oturum geri yükleme için oynatma konumları\n• Arayüz ayarları (dil, ses seviyesi vb.)\n\nBu verileri istediğiniz zaman uygulama ayarlarından veya manuel olarak silebilirsiniz.",
+        ["UserAgreementSection4Title"] = "4. Fikri Mülkiyet",
+        ["UserAgreementSection4Text"] = "Insait Video Player, medya oynatma için LibVLC kütüphanesini kullanır. LibVLC, LGPL lisansı altında dağıtılan özgür bir yazılımdır.",
+        ["UserAgreementSection5Title"] = "5. Koşulların Kabulü",
+        ["UserAgreementSection5Text"] = "Bu uygulamayı kullanarak, bu sözleşmenin koşullarını kabul etmiş olursunuz. Herhangi bir koşulu kabul etmiyorsanız, lütfen uygulamayı kullanmayı bırakın.",
+        ["UserAgreementCopyright"] = "© 2026 Insait. Tüm hakları saklıdır.",
+        ["UserAgreementAcceptButton"] = "Anladım",
         
         // History
         ["HistoryWindowTitle"] = "İzleme Geçmişi",

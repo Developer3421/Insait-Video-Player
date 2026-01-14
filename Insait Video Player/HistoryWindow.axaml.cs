@@ -30,11 +30,6 @@ public partial class HistoryWindow : Window
     private ObservableCollection<HistoryDisplayItem> _historyItems = new();
     private ObservableCollection<HistoryDisplayItem> _filteredItems = new();
     
-    /// <summary>
-    /// Event raised when user wants to play a file from history
-    /// </summary>
-    public event EventHandler<string>? PlayFileRequested;
-    
     public HistoryWindow() : this(null)
     {
     }
@@ -69,9 +64,6 @@ public partial class HistoryWindow : Window
         
         // Search box
         SearchBox.TextChanged += OnSearchTextChanged;
-        
-        // Double-click to play
-        HistoryList.DoubleTapped += OnHistoryItemDoubleTapped;
     }
     
     private void UpdateLocalizedText()
@@ -209,51 +201,6 @@ public partial class HistoryWindow : Window
                 System.Diagnostics.Debug.WriteLine($"Error deleting history item: {ex.Message}");
             }
         }
-    }
-    
-    private void OnPlayHistoryItem(object? sender, RoutedEventArgs e)
-    {
-        if (sender is Button button && button.Tag is HistoryDisplayItem item)
-        {
-            // Check if file exists
-            if (File.Exists(item.FilePath))
-            {
-                PlayFileRequested?.Invoke(this, item.FilePath);
-                Close();
-            }
-            else
-            {
-                // Show error or remove from history
-                System.Diagnostics.Debug.WriteLine($"File not found: {item.FilePath}");
-            }
-        }
-    }
-    
-    private void OnHistoryItemDoubleTapped(object? sender, TappedEventArgs e)
-    {
-        // Find the clicked item
-        if (e.Source is Control control)
-        {
-            var item = FindHistoryItem(control);
-            if (item != null && File.Exists(item.FilePath))
-            {
-                PlayFileRequested?.Invoke(this, item.FilePath);
-                Close();
-            }
-        }
-    }
-    
-    private HistoryDisplayItem? FindHistoryItem(Control? control)
-    {
-        while (control != null)
-        {
-            if (control.DataContext is HistoryDisplayItem item)
-            {
-                return item;
-            }
-            control = control.Parent as Control;
-        }
-        return null;
     }
     
     private void OnTitleBarPointerPressed(object? sender, PointerPressedEventArgs e)
