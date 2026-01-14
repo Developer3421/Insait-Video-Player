@@ -64,7 +64,7 @@ Insait Video Player/
 
 ## Additional Features
 
-- **Tab Management**: Unlimited tabs with drag-to-reorder and overflow menu
+- **Tab Management**:  Tabs with drag-to-reorder and overflow menu
 - **Session Persistence**: Auto-saves sessions with encrypted storage
 - **Error Handling**: User-friendly messages 
 
