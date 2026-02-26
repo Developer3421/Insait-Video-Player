@@ -14,7 +14,7 @@ A modern, feature-rich video player for Windows built with Avalonia UI and LibVL
 
 ### Playback Controls
 - **Advanced Timeline**: Precise seeking with thumbnail preview and time display
-- **Speed Control**: Adjust playback speed from 0.25x to 2.0x
+
 - **Volume Control**: Fine-grained volume adjustment with visual feedback
 - **Subtitles**: Full subtitle support with multiple track selection
 - **Audio Tracks**: Switch between multiple audio tracks
@@ -40,27 +40,8 @@ A modern, feature-rich video player for Windows built with Avalonia UI and LibVL
 - **Database**: LiteDB 6.0 (Embedded NoSQL database)
 - **Encryption**: System.Security.Cryptography.ProtectedData (DPAPI)
 
-## Requirements
-
-- Windows 10 or later
-- .NET 10.0 Runtime
 
 
-## Project Structure
-
-```
-Insait Video Player/
-├── PlayerWindow.axaml(.cs)          # Main player window and logic
-├── SettingsWindow.axaml(.cs)        # Settings interface
-├── HistoryWindow.axaml(.cs)         # Playback history viewer
-├── SessionManager.cs                # Session persistence and encryption
-├── Program.cs                       # Application entry point
-├── App.axaml(.cs)                   # Application configuration
-├── Localization/
-│   └── LocalizationManager.cs       # Multi-language support
-├── Sources/                         # UI resources and images
-└── Icons/                           # Application icons
-```
 
 ## Additional Features
 
