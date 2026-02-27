@@ -50,7 +50,7 @@ A modern, feature-rich video player for Windows built with Avalonia UI and LibVL
 - **Error Handling**: User-friendly messages 
 
 ## Download
-Microsoft Store: (in work)
+Microsoft Store: https://apps.microsoft.com/detail/9PKXCQFWDNFQ
 
 ## Known Issues
 
